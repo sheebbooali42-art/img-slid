@@ -1,0 +1,114 @@
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            width: 400px;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            overflow: hidden;
+
+
+        }
+
+        .slider {
+            width: 400px;
+            height: 400px;
+            display: flex;
+
+            flex-shrink: 0;
+
+        }
+
+        .slider img {
+            width: 400px;
+            height: 400px;
+            transition: 2s;
+        }
+
+        .btn {
+            color: red;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: greenyellow;
+            color: red;
+            border-radius: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 20px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="slider">
+            <img src="https://c8.alamy.com/comp/2S1A3Y4/img-letter-logo-design-for-technology-company-img-logo-design-black-and-white-color-combination-img-logo-img-vector-img-design-img-icon-img-alph-2S1A3Y4.jpg"
+                alt="">
+        </div>
+        <div class="slider">
+            <img src="https://www.constructionweekonline.com/cloud/2021/07/07/img-worlds-of-adventure.jpg" alt="">
+
+        </div>
+        <div class="slider">
+            <img src="https://i.ytimg.com/vi/Bor5lkRyeGo/hqdefault.jpg" alt="">
+
+        </div>
+
+        <div class="slider">
+            <img src="https://cdn.magicdecor.in/com/2025/02/28150633/Cute-Little-kitten-Wallpaper-Mural.jpg" alt="">
+
+
+            </div>
+    </div>
+    <div class="btn">
+        <button onclick="previmg()">prev</button>
+        <button onclick="nextimg()">next </button>
+    </div>
+    
+
+</body>
+
+<script>
+    var shibbu = document.querySelectorAll('.slider img');
+    var count = 0;
+    var total = shibbu.length;
+    function nextimg() {
+        if (count < total - 1) {
+            count++;
+            slide();
+        }
+    }
+
+    function previmg() {
+        if (count > 0) {
+            count--;
+            slide();
+        }
+    }
+
+    function slide() {
+        for (var img of shibbu) {
+            img.style.transform = `translateX(-${count * 100}%)`;
+
+        }
+    }
+
+</script>
+
+</html>
